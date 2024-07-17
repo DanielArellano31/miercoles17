@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "practicajesi_backend": {
+      "build": "npx azle practicajesi_backend",
+      "candid": "src/practicajesi_backend/practicajesi_backend.did",
+      "gzip": true,
+      "main": "src/practicajesi_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/practicajesi_backend/practicajesi_backend.wasm"
+    },
+    "practicajesi_frontend": {
+      "dependencies": [
+        "practicajesi_backend"
+      ],
+      "source": [
+        "src/practicajesi_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "practicajesi_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
